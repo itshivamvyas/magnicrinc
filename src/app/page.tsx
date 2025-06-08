@@ -1,44 +1,73 @@
-// src/app/page.tsx
-
 import React from "react";
 
-const featuredProducts = [
-  { id: 1, name: "Elegant Vase", image: "/images/vase.jpg", price: "$45" },
-  { id: 2, name: "Modern Lamp", image: "/images/lamp.jpg", price: "$80" },
-  { id: 3, name: "Decorative Pillow", image: "/images/pillow.jpg", price: "$30" },
-];
-
-export default function HomePage() {
+const Page = () => {
   return (
-    <main>
-      <header className="hero">
-        <h1>Magnificent Creations Inc.</h1>
-        <p>Transform your home with unique, handcrafted decor.</p>
-        <a href="/shop" className="cta">Shop Now</a>
+    <div className="min-h-screen bg-gray-100 text-gray-800 font-sans flex flex-col">
+      {/* Header */}
+      <header className="bg-indigo-600 text-white text-center py-10">
+        <h1 className="text-4xl font-bold">Magnificent Creations Inc</h1>
+        <p className="mt-2 text-lg">Your Dream Home Starts Here</p>
       </header>
 
-      <section className="featured">
-        <h2>Featured Products</h2>
-        <div className="product-grid">
-          {featuredProducts.map((product) => (
-            <div key={product.id} className="product-card">
-              <img src={product.image} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>{product.price}</p>
-              <button>Add to Cart</button>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Navigation */}
+      <nav className="bg-indigo-400 text-white text-center py-4">
+        <a href="#" className="mx-4 font-semibold hover:underline">
+          Home
+        </a>
+        <a href="#" className="mx-4 font-semibold hover:underline">
+          Services
+        </a>
+        <a href="#" className="mx-4 font-semibold hover:underline">
+          Gallery
+        </a>
+        <a href="#" className="mx-4 font-semibold hover:underline">
+          Contact
+        </a>
+      </nav>
 
-      <section className="about">
-        <h2>About Magnificent Creations Inc.</h2>
-        <p>
-          We bring elegance and warmth to your living spaces with handcrafted home decor pieces
-          that blend artistry with functionality.
-        </p>
-        <a href="/about">Learn More</a>
-      </section>
-    </main>
+      {/* Main Content */}
+      <main className="flex-grow p-6 md:p-12 space-y-10">
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Welcome</h2>
+          <p>
+            At Magnificent Creations Inc, we specialize in turning your vision
+            into beautifully crafted spaces. From minimalistic interiors to
+            grand traditional decor, our team delivers excellence with passion
+            and precision.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Our Services</h2>
+          <ul className="list-disc list-inside">
+            <li>Interior Design Consultation</li>
+            <li>Custom Furniture & Decor</li>
+            <li>Space Planning</li>
+            <li>Renovation & Remodeling</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-2">Get In Touch</h2>
+          <p>
+            Email us at:{" "}
+            <a
+              href="mailto:info@magnificentcreations.com"
+              className="text-indigo-600 underline"
+            >
+              info@magnificentcreations.com
+            </a>
+          </p>
+          <p>Call us: +91 79830 83328</p>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-indigo-600 text-white text-center py-4">
+        <p>Developed by Shivam Kumar © 2025</p>
+      </footer>
+    </div>
   );
-}
+};
+
+export default Page;
